@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
+  root 'foods#index'
 
-  devise_scope :user do
-      root 'devise/sessions#new'
-    end
+  resources :foods
+
 end

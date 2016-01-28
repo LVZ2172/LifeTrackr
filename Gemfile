@@ -17,6 +17,7 @@ gem 'faker'
 gem 'paperclip'
 gem 'remotipart'
 gem 'devise'
+gem 'cancancan'
 
 group :development do
   gem 'byebug'
