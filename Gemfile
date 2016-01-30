@@ -18,6 +18,8 @@ gem 'paperclip'
 gem 'remotipart'
 gem 'devise'
 gem 'cancancan'
+gem 'nutritionix'
+gem 'figaro'
 
 group :development do
   gem 'byebug'
