@@ -11,14 +11,12 @@
       <tr>
         <td><%= food.name %></td>
         <td><%= food.calories %></td>
-        <td><%= link_to 'Show', food, class: "btn-xs btn-info" %></td>
-        <td><%= link_to 'Edit', edit_food_path(food), class: "btn-xs btn-success" %></td>
-        <td><%= link_to 'Destroy', food, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-xs btn-danger" %></td>
+        <td><%= link_to 'Show', user_food_path(@user, food.id), class: "btn-xs btn-info" %></td>
+        <td><%= link_to 'Edit', edit_user_food_path(@user, food.id), class: "btn-xs btn-success" %></td>
+        <td><%= link_to 'Destroy', user_food_path(@user, food.id), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-xs btn-danger" %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'Add Food', new_food_path, class: 'btn btn-warning' %>

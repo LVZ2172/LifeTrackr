@@ -15,11 +15,30 @@
  */
 
  @font-face {
-   font-family: digital;
-   src: url("digital.tff");
+   font-family: 'digital';
+   src: url('digi.TTF');
  }
 
  body .bootstrap-override {
-   font-family: digital;
-   color: red;
+   font-family: 'digital';
+   letter-spacing: 2.5px;
+   text-align: center;
  }
+
+ .bootstrap-override .jumbotron {
+   background-image: url("heart.png");
+   background-repeat: no-repeat;
+   background-size: 15%;
+   background-position: 90%;
+   background-color: white;
+ }
+
+ form {
+   text-align: center;
+ }
+
+.bootstrap-override .container#content {
+  background-color: rgba(150, 252, 255, 0.53);
+  border-radius: 5%;
+  height: 500px;
+}
