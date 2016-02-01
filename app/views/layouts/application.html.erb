@@ -15,23 +15,27 @@
     <div class="container">
       <h1>Life Trackr</h1>
         <% if user_signed_in? %>
-          <%= link_to "Home", user_path(@user) %> |
-          <%= link_to "Sign Out", destroy_user_session_path(), method: :delete %> |
-          <span class="glyphicon glyphicon-heart"</span><%= current_user.email %>
+          <%= link_to "Home", user_path(current_user) %> |
+          <%= link_to "Sign Out", destroy_user_session_path(), method: :delete %>
         <% else %>
           <%= link_to "Log In", new_user_session_path() %> |
           <%= link_to "Sign Up", new_user_registration_path() %>
         <% end %>
       </div>
     </div>
-  <div class="container">
    <p class="notice"><%= notice %></p>
    <p class="alert"><%= alert %></p>
-    <div class="container" id="content">
-      <%= yield %>
-    </div>
   </div>
- </div>
+    <div class="container" id="content">
+      <div class="container" id="incontent">
+       <%= yield %>
+      </div>
+    </div>
+  <nav class="navbar navbar-default navbar-fixed-bottom" id="nav">
+    <% if user_signed_in? %>
+     <span class="glyphicon glyphicon-heart" id="bot"</span><%= current_user.email %>
+    <% end %>
+  </nav>
 </div>
 </body>
 </html>

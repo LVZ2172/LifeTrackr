@@ -21,7 +21,7 @@
 
  body .bootstrap-override {
    font-family: 'digital';
-   letter-spacing: 2.5px;
+   letter-spacing: 5px;
    text-align: center;
  }
 
@@ -39,6 +39,19 @@
 
 .bootstrap-override .container#content {
   background-color: rgba(150, 252, 255, 0.53);
-  border-radius: 5%;
   height: 500px;
-}
+  box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.4);
+  overflow-y: scroll;
+  overflow-x: hidden;
+  }
+
+  .bootstrap-override .navbar {
+    background: #e70000;
+  }
+
+  .bootstrap-override span#bot {
+    color: white;
+    text-align: left;
+    font-size: 15px;
+    font-weight: bold;
+  }

@@ -5,9 +5,8 @@ class FoodsController < ApplicationController
   respond_to :html
 
   def index
-    @user = User.where(user_id:current_user.id)
+    @user = User.find(params[:user_id])
     @foods = Food.all
-    respond_with(@foods)
   end
 
   def show
@@ -25,23 +24,27 @@ class FoodsController < ApplicationController
   end
 
   def edit
+    @user = User.find(params[:user_id])
+    @food = Food.find(params[:id])
   end
 
   def create
     @user = User.find(params[:user_id])
     @food = @user.foods.new(food_params)
     if @food.save
-     redirect_to user_food_path(@user, @food)
+     redirect_to user_foods_path(@user, @food)
    end
   end
 
   def update
-    @food.update(food_params)
-    respond_with(@food)
+    @user = User.find(params[:user_id])
+    if @food.update(food_params)
+      redirect_to user_foods_path(@user, @food)
   end
+end
 
   def destroy
-    @user = User.where(user_id:current_user.id)
+    @user = User.find(params[:user_id])
     if @food.destroy
       redirect_to user_foods_path(@user)
     end
